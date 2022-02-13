@@ -11,10 +11,10 @@ class CommentsController < ApplicationController
         @comments.order!(:created_at)
       end
     end
-  end 
+  end
 
-  private 
-    
+  private
+
   def comment_owner?
     @profile = Profile.find(params[:profile_id])
     if !current_user

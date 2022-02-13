@@ -4,7 +4,7 @@ class Profile < ApplicationRecord
   validates :nickname, length: {maximum: 20, message: 'Nickname too long, Maximum of 20 characters'}
   validates :bio, presence: {message: 'Bio cannot be blank'}
   validates :bio, length: {maximum: 500, message: 'Bio Max Length is 500 characters'}
-  
+
   belongs_to :user
   has_one_attached :avatar
 
