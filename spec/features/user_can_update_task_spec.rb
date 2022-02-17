@@ -4,8 +4,8 @@ feature 'User can edit Tasks' do
   scenario 'If user is the creator, Successfully' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit reports_path
     click_on 'show task'
@@ -21,8 +21,8 @@ feature 'User can edit Tasks' do
   scenario 'If user is the creator, And must fill all fields' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit reports_path
     click_on 'show task'
