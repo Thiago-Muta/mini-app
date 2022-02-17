@@ -9,16 +9,12 @@
     <% if (user_signed_in?)%>
       <!-- Dropdown -->
       <div class="btn-group ml-3">
-        <button type="button" class="btn btn-outline-primary"><i class='fa fa-tasks'></i><%= link_to 'My Tasks Reports', user_reports_path %></button>
-
-
-
-        <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
+        <button type="button" class="btn btn-outline-primary"><i class='fa fa-tasks'></i><%= link_to '  My Complete Tasks Reports', user_reports_path %>
         </button>
-        <div class="dropdown-menu">
-          <%= link_to ' Tasks Reports', reports_path, class: 'fa fa-laptop dropdown-item'%>
-        </div>
+      </div>
+
+      <div class="btn-group ml-3">
+        <button type="button" class="btn btn-outline-primary"><i class='fa fa-tasks'></i><%= link_to '  All Tasks Reports', reports_path %></button>
       </div>
       <!-- create task -->
       <%= link_to ' Create a Task', new_task_path, class: 'fa fa-cart-plus btn btn-outline-success ml-3'  %>

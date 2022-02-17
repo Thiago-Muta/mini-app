@@ -1,28 +1,32 @@
-<% @profile.errors.full_messages.each do |error| %> 
-  <p><%= error %> </p> 
+<% @profile.errors.full_messages.each do |error| %>
+  <p><%= error %> </p>
 <% end %>
 
-  <p> Edit <%= @profile.nickname %> Profile </p>
-  <%= form_for @profile do |f| %> 
+ <div class='container border' >
+   <div align='center'>
+    <h4> Edit <%= @profile.nickname %> Profile </h4>
+    <%= form_for @profile do |f| %>
 
-      <%= f.hidden_field :user_id, value: params[:id]%>
+        <%= f.hidden_field :user_id, value: params[:id]%>
 
-      <div>
-        <%= f.label :bio, 'Your Bio:'%>
-        <%= f.text_area :bio, class: 'form-control mb-2', rows: '4'%>
-      </div>
+        <div align='center'>
+          <%= f.label :bio, 'Your Bio:'%>
+          <%= f.text_area :bio, class: 'form-control mb-2', rows: '4'%>
+        </div>
 
-        <br>
+          <br>
 
-      <div>
-        <%= f.label :avatar, 'Your Profile Picture' %>
-        <%= f.file_field :avatar %>
-      </div>
+        <div align='center'>
+          <%= f.label :avatar, 'Your Profile Picture' %>
+          <%= f.file_field :avatar %>
+        </div>
 
-        <br>
+          <br>
 
-      <div>
-        <%= f.submit class: 'btn btn-primary col-4'%>
-        <%= link_to 'Go Back', :back, class: 'btn btn-secondary col-4' %>
-      </div>
-  <% end %>
+        <div align='center'>
+          <%= f.submit class: 'btn btn-primary col-4'%>
+          <%= link_to 'Go Back', :back, class: 'btn btn-secondary col-4' %>
+        </div>
+    <% end %>
+
+  </div>
