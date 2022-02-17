@@ -1,10 +1,21 @@
 ## Challenge AutoSeg
 
+Desafio concluído:
 
+Tarefa 1 - O bug foi retirado
+
+Tarefa 2 - O seed foi populado, e foi criado o (reports_controller) com a sua rota e view, na qual a 1º leva para (My Complete Tasks Reports) relatório do usuário onde contem somente as tasks completas e os cometarios em ordem alfabética. Já 2º rota leva para (All Tasks Reports) um relatório geral das tasks de todos usuários podendo estar completa ou não, e os cometários em ordem alfabética também.
+
+Tarefa 3 - Foi criado o CRUD de Tarefas e os specs.
+
+-Foi inserido algumas funcionalidades (deletar, editar, alterar status da task) que somente o criador da task pode fazer.
+-Todos podem visualizar o criador da task, titulo, descrição e os comentários.
+
+<!--
 ### TaskManager App
-Considere o app deste projeto já estruturado, onde nele conseguimos cadastrar tarefas do dia-a-dia a serem realizadas, junto com uma descrição, colocar comentários e algumas outras features :) 
+Considere o app deste projeto já estruturado, onde nele conseguimos cadastrar tarefas do dia-a-dia a serem realizadas, junto com uma descrição, colocar comentários e algumas outras features :)
   Então... considere a atual estrutura de model já existente:
-  
+
   ```
                 ____________
                | User       |
@@ -18,7 +29,7 @@ Considere o app deste projeto já estruturado, onde nele conseguimos cadastrar t
 | - title       |1 -------- *| - body   |
 | - description |            | - status |
 | - status      |            | - score  |
-| - priority    |            | - like   |             
+| - priority    |            | - like   |
 | - share       |            |__________|
 |_______________|
 ```
@@ -36,14 +47,14 @@ $ bundle exec rails db:create db:migrate db:seed
 $ yarn install --check-files
 $ rails s
 ```
-3 - Ao acessar a aplicação, crie uma conta. 
+3 - Ao acessar a aplicação, crie uma conta.
 ### Tarefa 1
 1 - Logo na sequência que criou a conta no passo anterior, será necessário criar um perfil.
 Porém há um bug nesta feature, a atividade da tarefa 1 é tentar identificá-lo e corrigir.
 ### Tarefa 2
 2 - Para esta tarefa é necessário a execução do seeds antes, certifique-se que você populou o banco de dados.
 2.1 - Esta atividade é para ser criado um relatório de todas as Tarefas, onde listaremos algo semelhante ao exemplo abaixo:
-___________________________________ 
+___________________________________
 | Tasks (ID) | Comments | Status   |
 |------------|----------|----------|
 | 1          | Aaaaaa   | complete |
@@ -54,9 +65,9 @@ ___________________________________
  - Uma controller;
  - Uma rota;
  - Uma view;
- 
+
   2.3. - Exiba um relatório das Tasks completas do User, e liste todos os comentários em ordem alfabética conforme o exemplo acima.
-  
+
   2.4. - Crie um spec de integração para o relatório.
 
 ### Tarefa 3
@@ -64,7 +75,7 @@ ___________________________________
 3 - Crie um CRUD de tarefas em tasks/new;
 
   3.1 - Temos o arquivo deste spec vazio, escreva o(s) spec(s) de integração;
-  
+
   3.2 - Crie um spec unitário.
 
 ### Boa sorte
@@ -73,5 +84,4 @@ Caso tenha dúvidas, por gentileza entre em contato com a Equipe AutoSeg :)
 ### Observações
 - Não é necessário realizar o deploy do projeto no Heroku.
 - Crie um projeto em seu Github e suba o projeto lá após a finalização.
-- Não dê um fork / suba um PR em nosso repositório.
-
+- Não dê um fork / suba um PR em nosso repositório. -->

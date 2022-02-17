@@ -1,4 +1,4 @@
-class HomeController < ApplicationController 
+class HomeController < ApplicationController
   before_action :user_profile?
 
   def index

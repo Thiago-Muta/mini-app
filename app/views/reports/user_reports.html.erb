@@ -1,0 +1,48 @@
+<div class="container" align='center'>
+  <div class="box">
+    <h1>My Complete Tasks Reports</h1>
+
+    <table border="2">
+      <thead>
+        <tr>
+        <th>Tasks (ID)</th>
+        <th>Title</th>
+        <th>Comments</th>
+        <th>Status</th>
+        <th colspan="2">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%if @tasks.present? %>
+          <% @tasks.each do |task| %>
+            <tr>
+              <td>
+                <%=task.id %>
+              </td>
+              <td>
+                <%=task.title %>
+              </td>
+              <td>
+                <%if task.comments.present? %>
+                  <%task.comments.sort_by(&:body).each do |comment| %>
+                    <%=comment.body%>,
+                  <%end %>
+                <%else %>
+                  No comments yet
+                <%end %>
+              </td>
+              <td>
+                <%=task.status%>
+              </td>
+              <td>
+                <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
+              </td>
+          </tr>
+          <%end%>
+        <%else %>
+          <td colspan="5" align='center'>No Complete Tasks yet</td>
+        <%end %>
+      </tbody>
+    </table>
+  </div>
+</div>

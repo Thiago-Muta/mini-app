@@ -1,25 +1,25 @@
 <div class='container border'>
-  
+
   <div class='row'>
     <% if @profile == current_user.profile %>
-      <h1 class='col', align='center'> Welcome, <%= @profile.nickname %>!</h1> 
+      <h1 class='col', align='center'> Welcome, <%= @profile.nickname %>!</h1>
     <% else %>
-      <h1 class='col', align='center'> Welcome to <%= @profile.nickname %>'s Profile!</h1> 
+      <h1 class='col', align='center'> Welcome to <%= @profile.nickname %>'s Profile!</h1>
     <% end %>
   </div>
-  <div class='row'> 
+  <div class='row'>
     <p class='col-5'></p>
     <small class='col-4'> This Profile is <%= @profile.share ? 'Public' : 'Private' %></small>
   </div>
 
-  <br> 
+  <br>
 
   <br>
 
-  <div class='row'> 
-    <p class='col-2'><strong>Profile Picture</strong>:</p> 
+  <div class='row'>
+    <p class='col-2'><strong>Profile Picture</strong>:</p>
     <% if @profile.avatar.attached? %>
-      <%= image_tag(@profile.avatar, class:'img-fluid col-2 border') %> 
+      <%= image_tag(@profile.avatar, class:'img-fluid col-2 border') %>
     <% else %>
       <p class='col-4'>Empty</p>
     <% end %>
@@ -31,16 +31,16 @@
     </p>
   </div>
 
-  <br> 
+  <br>
 
   <div class='row'>
     <p class='col-4'></p>
       <% if current_user == @profile.user %>
-        <%= form_for(@profile, url: change_privacy_profile_path, method: :post, class: 'form-inline') do |f| %> 
+        <%= form_for(@profile, url: change_privacy_profile_path, method: :post, class: 'form-inline') do |f| %>
         <div class='form-group'>
           <strong class='text-center'><%= f.label :share, 'Change Privacy:' %></strong>
-          <%= f.select(:share, [['Private', false], ['Public', true]]) %> 
-          <%= f.hidden_field :profile_id, value: params[:id] %> 
+          <%= f.select(:share, [['Private', false], ['Public', true]]) %>
+          <%= f.hidden_field :profile_id, value: params[:id] %>
           <%= f.submit 'Change Setting' %>
         </div>
         <% end %>
@@ -51,14 +51,12 @@
 
     <div class='row'>
       <p class='col-4'></p>
-      <% if current_user == @profile.user %> 
+      <% if current_user == @profile.user %>
         <%= link_to 'Edit Info', edit_profile_path(@profile), class: 'text-white btn btn-primary col-2'%>
       <% end %>
-      <%= link_to 'Go Back', :back, class: 'btn btn-secondary col-2' %>
+      <%= link_to 'Go home', root_path, class: 'btn btn-secondary col-2' %>
     </div>
     <br>
     <br>
-    <br> 
+    <br>
 </div>
-
-
