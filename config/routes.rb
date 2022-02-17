@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :tasks
+    post 'change_status', to: 'tasks#change_status'
 
   get 'user_reports', to: 'reports#user_reports'
   get 'reports', to: 'reports#index'
