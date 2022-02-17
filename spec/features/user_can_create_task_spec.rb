@@ -4,8 +4,8 @@ feature 'User can Create Task' do
   scenario 'Successfully' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit new_task_path
     fill_in 'Title', with: 'New Title'
@@ -25,8 +25,8 @@ feature 'User can Create Task' do
   scenario 'And Title must have more than 4 characters' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit new_task_path
     fill_in 'Title', with: 'New'
@@ -39,8 +39,8 @@ feature 'User can Create Task' do
   scenario 'And Title must have less than 20 characters' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit new_task_path
     fill_in 'Title', with: 'Neeeeeeeeeeeeeeeeeeeeeeew'
@@ -53,8 +53,8 @@ feature 'User can Create Task' do
   scenario 'And Description Can\'t be blank' do
     user = create(:user)
     create(:profile, user: user, share: true)
-    task = create(:task, user: user)
     login_as(user)
+    task = create(:task, user: user)
 
     visit new_task_path
     fill_in 'Title', with: 'New Title'
