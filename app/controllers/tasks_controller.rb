@@ -23,6 +23,7 @@ class TasksController < ApplicationController
       flash[:notice] = 'Task Created!'
       redirect_to reports_path
     else
+      flash[:notice] = 'Task Not Create!, insert Title and Description'
       render :new
     end
   end
