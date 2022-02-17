@@ -1,0 +1,47 @@
+<div align="center">
+  <div class='form-group align-item-center container border'>
+
+    <div class='row'>
+      <p class='col-4'></p>
+        <div class='col-4 text-center' >
+          <% if @task.user.present? %>
+            <h6>User name: <%=@task.user.profile.nickname %></h6>
+            <h1>Task Title:  <%= @task.title %></h1>
+          <%else %>
+            <h1>Task Title:  <%= @task.title %></h1>
+          <%end %>
+
+        </div>
+    </div>
+
+    <div class='row'>
+      <p class='col-4'></p>
+        <div class='col-4' align='center'>
+          <h4>Description:  <%= @task.description %></h4>
+        </div>
+    </div>
+
+    <div class='row'>
+      <p class='col-4'></p>
+        <div class='col-4' align='center'>
+          <p>Comments:   <%if @task.comments.present? %>
+                            <%@task.comments.sort_by(&:body).each do |comment| %>
+                              <%= comment.body %>,
+                            <%end%>
+                          <%else%>
+                            No comments yet
+                          <%end %>
+          </p>
+        </div>
+    </div>
+
+    <div class="text-btn w-100 mt-4">
+      <%if current_user == @task.user %>
+        <td>
+          <%= link_to 'Edit Task', edit_task_path(@task), class: "btn btn-primary"%>
+        </td>
+      <%end %>
+    </div>
+  </div>
+
+</div>
