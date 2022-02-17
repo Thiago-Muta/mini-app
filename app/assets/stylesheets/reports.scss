@@ -2,3 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+th {
+  background-color: #0089BA;
+}
+
+table tr:nth-child(odd) {
+  background-color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #ddd;
+}
